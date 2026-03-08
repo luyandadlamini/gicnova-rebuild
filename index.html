@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gicnova — Next-Gen AI Mobile App</title>
+  <meta name="description" content="Blazing-fast AI tools for writers, creators and innovators. Generate content, voiceovers, and avatars in seconds." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ================================================================
+       NAVIGATION
+  ================================================================ -->
+  <header class="nav" id="nav" role="banner">
+    <div class="container nav__inner">
+
+      <!-- Logo -->
+      <a href="/" class="nav__logo" aria-label="Gicnova home">
+        <span class="nav__logo-icon" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="16" fill="url(#logo-gradient)"/>
+            <path d="M10 16.5L14.5 21L22 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#a855f7"/>
+                <stop offset="1" stop-color="#ec4899"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="nav__logo-text">Gicnova</span>
+      </a>
+
+      <!-- Desktop links -->
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="#features" class="nav__link">Features</a>
+        <a href="#how-it-works" class="nav__link">How It Works</a>
+        <a href="#pricing" class="nav__link">Pricing</a>
+        <a href="#blog" class="nav__link">Blog</a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <div class="nav__actions">
+        <a href="#pricing" class="btn btn--secondary btn--sm">Sign in</a>
+        <a href="#pricing" class="btn btn--primary btn--sm">Get Started</a>
+      </div>
+
+      <!-- Hamburger (mobile) -->
+      <button class="nav__hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="nav__mobile" id="mobileMenu" role="dialog" aria-label="Mobile navigation" hidden>
+      <nav class="nav__mobile-links" aria-label="Mobile navigation links">
+        <a href="#features" class="nav__mobile-link">Features</a>
+        <a href="#how-it-works" class="nav__mobile-link">How It Works</a>
+        <a href="#pricing" class="nav__mobile-link">Pricing</a>
+        <a href="#blog" class="nav__mobile-link">Blog</a>
+      </nav>
+      <div class="nav__mobile-actions">
+        <a href="#pricing" class="btn btn--secondary btn--full">Sign in</a>
+        <a href="#pricing" class="btn btn--primary btn--full">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================================================================
+         HERO SECTION
+    ================================================================ -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+
+      <!-- Background orbs / glow elements -->
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__orb hero__orb--3"></div>
+      </div>
+
+      <div class="container hero__inner">
+
+        <!-- Text column -->
+        <div class="hero__content">
+          <div class="hero__badge" data-animate="fade-up">
+            <span class="badge">
+              <span class="badge__dot" aria-hidden="true"></span>
+              Next-Gen AI App
+            </span>
+          </div>
+
+          <h1 class="hero__heading" id="hero-heading" data-animate="fade-up" data-delay="0.15">
+            Redefine Mobile<br>
+            <span class="text-gradient">Creativity &amp; AI</span>
+          </h1>
+
+          <p class="hero__subheadline" data-animate="fade-up" data-delay="0.3">
+            Blazing-fast AI tools for writers, creators, and innovators. Generate
+            content, voiceovers, and lifelike avatars — all in one app.
+          </p>
+
+          <!-- Download CTAs -->
+          <div class="hero__cta" data-animate="fade-up" data-delay="0.45">
+            <a href="#" class="btn btn--store" aria-label="Download on the App Store">
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <span>
+                <small>Download on the</small>
+                App Store
+              </span>
+            </a>
+            <a href="#" class="btn btn--store" aria-label="Get it on Google Play">
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.37.2.8.22 1.2.04l12.35-6.9-2.65-2.65-10.9 9.51zm-1.01-19.8C2.06 4.2 2 4.53 2 4.88v14.24c0 .35.06.68.17.96l.09.09 7.98-7.98v-.19l-7.98-7.97-.09.03zm13.4 10.77l-2.66-2.67 2.66-2.66 3 1.68c.86.48.86 1.26 0 1.74l-3 1.91zm-12.24 7.38L16.02 15l-2.65-2.66L3.33 22.1l.01.01z"/></svg>
+              <span>
+                <small>Get it on</small>
+                Google Play
+              </span>
+            </a>
+          </div>
+
+          <!-- Trust strip -->
+          <div class="hero__trust" data-animate="fade-up" data-delay="0.6">
+            <div class="hero__trust-avatars" aria-hidden="true">
+              <span class="avatar avatar--1"></span>
+              <span class="avatar avatar--2"></span>
+              <span class="avatar avatar--3"></span>
+              <span class="avatar avatar--4"></span>
+            </div>
+            <p class="hero__trust-text">
+              <strong>6,650+</strong> global users &nbsp;·&nbsp;
+              <span class="hero__stars" aria-label="4.9 stars">★★★★★</span>
+              <strong>4.9</strong>
+            </p>
+          </div>
+        </div>
+
+        <!-- Phone mockup column -->
+        <div class="hero__visual" data-animate="fade-up-scale" data-delay="0.2" aria-hidden="true">
+          <div class="phone-mockup">
+            <!-- Phone frame -->
+            <div class="phone-mockup__frame">
+              <div class="phone-mockup__screen">
+                <!-- App UI illustration -->
+                <div class="app-ui">
+                  <div class="app-ui__header">
+                    <div class="app-ui__greeting">Good morning, Alex 👋</div>
+                    <div class="app-ui__avatar-sm"></div>
+                  </div>
+                  <div class="app-ui__tools">
+                    <div class="app-ui__tool app-ui__tool--writer">
+                      <span class="app-ui__tool-icon">✍️</span>
+                      <span>AI Writer</span>
+                    </div>
+                    <div class="app-ui__tool app-ui__tool--voice">
+                      <span class="app-ui__tool-icon">🎙️</span>
+                      <span>Voiceover</span>
+                    </div>
+                    <div class="app-ui__tool app-ui__tool--avatar">
+                      <span class="app-ui__tool-icon">🤖</span>
+                      <span>Avatar</span>
+                    </div>
+                  </div>
+                  <div class="app-ui__prompt">
+                    <div class="app-ui__prompt-text">Write a blog post about...</div>
+                    <div class="app-ui__prompt-bar"></div>
+                  </div>
+                  <div class="app-ui__result">
+                    <div class="app-ui__result-line"></div>
+                    <div class="app-ui__result-line app-ui__result-line--short"></div>
+                    <div class="app-ui__result-line"></div>
+                    <div class="app-ui__result-line app-ui__result-line--medium"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating notification cards -->
+            <div class="float-card float-card--1">
+              <span class="float-card__icon">⚡</span>
+              <div>
+                <div class="float-card__title">Generated in 2s</div>
+                <div class="float-card__sub">Blog post ready</div>
+              </div>
+            </div>
+            <div class="float-card float-card--2">
+              <span class="float-card__icon">🌍</span>
+              <div>
+                <div class="float-card__title">24 Languages</div>
+                <div class="float-card__sub">Multilingual AI</div>
+              </div>
+            </div>
+            <div class="float-card float-card--3">
+              <span class="float-card__icon">🎯</span>
+              <div>
+                <div class="float-card__title">98% Accuracy</div>
+                <div class="float-card__sub">AI precision</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         TRUSTED BY / LOGO STRIP
+    ================================================================ -->
+    <section class="logo-strip" aria-label="Trusted by leading companies">
+      <div class="container">
+        <p class="logo-strip__label">Trusted by innovative teams worldwide</p>
+      </div>
+      <div class="logo-strip__track-wrapper" aria-hidden="true">
+        <div class="logo-strip__track" id="logoTrack">
+          <!-- Logos (duplicated for infinite scroll) -->
+          <div class="logo-strip__logos">
+            <span class="logo-item">Acme Corp</span>
+            <span class="logo-item">TechFlow</span>
+            <span class="logo-item">Nexus AI</span>
+            <span class="logo-item">Orbit Labs</span>
+            <span class="logo-item">Prisma Co</span>
+            <span class="logo-item">Vanta Inc</span>
+            <span class="logo-item">Luminary</span>
+            <span class="logo-item">Synthwave</span>
+            <!-- Duplicated for seamless loop -->
+            <span class="logo-item">Acme Corp</span>
+            <span class="logo-item">TechFlow</span>
+            <span class="logo-item">Nexus AI</span>
+            <span class="logo-item">Orbit Labs</span>
+            <span class="logo-item">Prisma Co</span>
+            <span class="logo-item">Vanta Inc</span>
+            <span class="logo-item">Luminary</span>
+            <span class="logo-item">Synthwave</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         FEATURES SECTION
+    ================================================================ -->
+    <section class="features" id="features" aria-labelledby="features-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-label">Core AI Tools</span>
+          <h2 class="section-heading" id="features-heading">
+            Everything you need to<br>
+            <span class="text-gradient">create, convert &amp; captivate</span>
+          </h2>
+          <p class="section-subheading">
+            Three powerful AI engines, one seamless app. Create content that resonates,
+            voices that connect, and avatars that represent.
+          </p>
+        </div>
+
+        <div class="features__grid">
+
+          <!-- AI Writer -->
+          <article class="feature-card" data-animate="fade-up" data-delay="0">
+            <div class="feature-card__icon-wrap feature-card__icon-wrap--writer">
+              <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">AI Writer</h3>
+            <p class="feature-card__desc">
+              Instantly generate SEO-optimised blogs, product descriptions, ad copies,
+              and emails in 24+ languages. Smart, fast, and context-aware.
+            </p>
+            <ul class="feature-card__list">
+              <li>Blog posts &amp; articles</li>
+              <li>Ad copy &amp; social media</li>
+              <li>Email campaigns</li>
+              <li>Multilingual content</li>
+            </ul>
+            <a href="#" class="feature-card__link">
+              Explore Writer
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            </a>
+          </article>
+
+          <!-- AI Voiceover -->
+          <article class="feature-card feature-card--featured" data-animate="fade-up" data-delay="0.1">
+            <div class="feature-card__badge">Most Popular</div>
+            <div class="feature-card__icon-wrap feature-card__icon-wrap--voice">
+              <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">AI Voiceover</h3>
+            <p class="feature-card__desc">
+              Generate natural-sounding, human-like voiceovers for podcasts, videos,
+              tutorials, and presentations with multiple voice styles and languages.
+            </p>
+            <ul class="feature-card__list">
+              <li>120+ voice styles</li>
+              <li>Podcast &amp; video narration</li>
+              <li>Real-time generation</li>
+              <li>24 language support</li>
+            </ul>
+            <a href="#" class="feature-card__link">
+              Explore Voiceover
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            </a>
+          </article>
+
+          <!-- AI Avatar -->
+          <article class="feature-card" data-animate="fade-up" data-delay="0.2">
+            <div class="feature-card__icon-wrap feature-card__icon-wrap--avatar">
+              <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">AI Avatar</h3>
+            <p class="feature-card__desc">
+              Design lifelike or stylised avatars to represent your brand, enhance
+              videos, or create virtual characters for any platform or persona.
+            </p>
+            <ul class="feature-card__list">
+              <li>Photorealistic avatars</li>
+              <li>Custom brand characters</li>
+              <li>Video integration</li>
+              <li>Style customisation</li>
+            </ul>
+            <a href="#" class="feature-card__link">
+              Explore Avatar
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         PRODUCT SHOWCASE / DEEP DIVE
+    ================================================================ -->
+    <section class="showcase" id="showcase" aria-labelledby="showcase-heading">
+      <div class="container">
+
+        <!-- Row 1: Text left, visual right -->
+        <div class="showcase__row">
+          <div class="showcase__text" data-animate="fade-right">
+            <span class="section-label">Smart Writing</span>
+            <h2 class="showcase__heading" id="showcase-heading">
+              Create multilingual content<br>
+              <span class="text-gradient">in seconds, not hours</span>
+            </h2>
+            <p class="showcase__desc">
+              Our AI Writer understands context, tone, and audience. Generate content
+              that feels human-written — because it understands what humans want to read.
+            </p>
+            <ul class="showcase__bullets">
+              <li class="showcase__bullet">
+                <span class="showcase__bullet-icon" aria-hidden="true">✓</span>
+                SEO-optimised by default with keyword insertion
+              </li>
+              <li class="showcase__bullet">
+                <span class="showcase__bullet-icon" aria-hidden="true">✓</span>
+                Tone adjustment: formal, casual, persuasive, technical
+              </li>
+              <li class="showcase__bullet">
+                <span class="showcase__bullet-icon" aria-hidden="true">✓</span>
+                Translate and localise to 24+ languages instantly
+              </li>
+              <li class="showcase__bullet">
+                <span class="showcase__bullet-icon" aria-hidden="true">✓</span>
+                One-click export to Notion, Google Docs, WordPress
+              </li>
+            </ul>
+            <a href="#pricing" class="btn btn--primary">Start Writing for Free</a>
+          </div>
+
+          <div class="showcase__visual" data-animate="fade-left">
+            <div class="showcase__mockup showcase__mockup--writer">
+              <div class="editor-ui">
+                <div class="editor-ui__toolbar">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="editor-ui__title">Blog Post Generator</div>
+                <div class="editor-ui__prompt">
+                  <label>Topic</label>
+                  <div class="editor-ui__input">The future of remote work in 2025</div>
+                </div>
+                <div class="editor-ui__settings">
+                  <div class="editor-ui__chip editor-ui__chip--active">Blog Post</div>
+                  <div class="editor-ui__chip">SEO Optimised</div>
+                  <div class="editor-ui__chip">1200 words</div>
+                </div>
+                <div class="editor-ui__output">
+                  <div class="editor-ui__line editor-ui__line--title"></div>
+                  <div class="editor-ui__line"></div>
+                  <div class="editor-ui__line editor-ui__line--short"></div>
+                  <div class="editor-ui__line"></div>
+                  <div class="editor-ui__line editor-ui__line--medium"></div>
+                  <div class="editor-ui__line"></div>
+                </div>
+                <div class="editor-ui__footer">
+                  <div class="editor-ui__stat">📊 SEO Score: 94</div>
+                  <div class="editor-ui__stat">⚡ 1.8 seconds</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Visual left, text right -->
+        <div class="showcase__row showcase__row--reversed">
+          <div class="showcase__visual" data-animate="fade-right">
+            <div class="showcase__mockup showcase__mockup--voice">
+              <div class="voice-ui">
+                <div class="voice-ui__waveform" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="voice-ui__label">Generating voiceover…</div>
+                <div class="voice-ui__voices">
+                  <div class="voice-ui__voice voice-ui__voice--active">
+                    <span class="voice-ui__avatar"></span>
+                    <span>Alex — Neutral</span>
+                  </div>
+                  <div class="voice-ui__voice">
+                    <span class="voice-ui__avatar"></span>
+                    <span>Sophia — Warm</span>
+                  </div>
+                  <div class="voice-ui__voice">
+                    <span class="voice-ui__avatar"></span>
+                    <span>Marcus — Deep</span>
+                  </div>
+                </div>
+                <div class="voice-ui__progress">
+                  <div class="voice-ui__progress-bar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__text" data-animate="fade-left">
+            <span class="section-label">Natural Voiceover</span>
+            <h2 class="showcase__heading">
+              Human-like voices that<br>
+              <span class="text-gradient">captivate every listener</span>
+            </h2>
+            <p class="showcase__desc">
+              Choose from 120+ voice styles across 24 languages. Perfect for YouTube
+              narration, podcasts, e-learning modules, and corporate presentations.
+            </p>
+            <ul class="showcase__bullets">
+              <li class="showcase__bullet">
+                <span class="showcase__bullet-icon" aria-hidden="true">✓</span>
+                Ultra-realistic voice synthesis with natural pacing
+              </li>
+              <li class="showcase__bullet">
+                <span class="showcase__bullet-icon" aria-hidden="true">✓</span>
+                Background music mixing and sound effects
+              </li>
+              <li class="showcase__bullet">
+                <span class="showcase__bullet-icon" aria-hidden="true">✓</span>
+                Export as MP3, WAV, or embed directly in video
+              </li>
+              <li class="showcase__bullet">
+                <span class="showcase__bullet-icon" aria-hidden="true">✓</span>
+                SSML support for fine-grained speech control
+              </li>
+            </ul>
+            <a href="#pricing" class="btn btn--primary">Try Voiceover Free</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         HOW IT WORKS
+    ================================================================ -->
+    <section class="how-it-works" id="how-it-works" aria-labelledby="hiw-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-label">Simple Process</span>
+          <h2 class="section-heading" id="hiw-heading">
+            Create in three<br>
+            <span class="text-gradient">effortless steps</span>
+          </h2>
+          <p class="section-subheading">
+            From idea to finished asset in under 60 seconds.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step" data-animate="fade-up" data-delay="0">
+            <div class="step__number" aria-hidden="true">01</div>
+            <div class="step__icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="step__title">Describe your idea</h3>
+            <p class="step__desc">
+              Type a prompt or paste your draft. Our AI understands context,
+              intent, and creative direction instantly.
+            </p>
+          </div>
+
+          <div class="step__connector" aria-hidden="true"></div>
+
+          <div class="step" data-animate="fade-up" data-delay="0.15">
+            <div class="step__number" aria-hidden="true">02</div>
+            <div class="step__icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="step__title">AI generates instantly</h3>
+            <p class="step__desc">
+              Our models process your request in seconds, generating high-quality
+              content tailored to your brief and brand voice.
+            </p>
+          </div>
+
+          <div class="step__connector" aria-hidden="true"></div>
+
+          <div class="step" data-animate="fade-up" data-delay="0.3">
+            <div class="step__number" aria-hidden="true">03</div>
+            <div class="step__icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="step__title">Edit, refine &amp; export</h3>
+            <p class="step__desc">
+              Polish with built-in editing tools, then export to your preferred
+              format — or publish directly from the app.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         STATS BANNER
+    ================================================================ -->
+    <section class="stats" aria-label="Platform statistics">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stat" data-animate="fade-up" data-delay="0">
+            <div class="stat__number">6,650<span class="stat__plus">+</span></div>
+            <div class="stat__label">Global Users</div>
+          </div>
+          <div class="stat" data-animate="fade-up" data-delay="0.1">
+            <div class="stat__number">24<span class="stat__plus">+</span></div>
+            <div class="stat__label">Languages Supported</div>
+          </div>
+          <div class="stat" data-animate="fade-up" data-delay="0.2">
+            <div class="stat__number">2M<span class="stat__plus">+</span></div>
+            <div class="stat__label">Content Pieces Created</div>
+          </div>
+          <div class="stat" data-animate="fade-up" data-delay="0.3">
+            <div class="stat__number">4.9<span class="stat__plus">★</span></div>
+            <div class="stat__label">App Store Rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         PRICING
+    ================================================================ -->
+    <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-label">Flexible Plans</span>
+          <h2 class="section-heading" id="pricing-heading">
+            Simple, transparent<br>
+            <span class="text-gradient">pricing for everyone</span>
+          </h2>
+          <p class="section-subheading">Start free. Upgrade when you need more power.</p>
+
+          <!-- Billing toggle -->
+          <div class="pricing__toggle" role="group" aria-label="Billing period">
+            <button class="pricing__toggle-btn pricing__toggle-btn--active" id="toggleMonthly" aria-pressed="true">Monthly</button>
+            <button class="pricing__toggle-btn" id="toggleAnnual" aria-pressed="false">
+              Annual
+              <span class="pricing__toggle-badge">Save 40%</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="pricing__grid">
+
+          <!-- Free -->
+          <div class="pricing-card" data-animate="fade-up" data-delay="0">
+            <div class="pricing-card__tier">Free</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount" data-monthly="0" data-annual="0">0</span>
+              <span class="pricing-card__period">/month</span>
+            </div>
+            <p class="pricing-card__desc">Perfect for trying out Gicnova's core AI tools.</p>
+            <ul class="pricing-card__features">
+              <li><span aria-hidden="true">✓</span> 5,000 words / month</li>
+              <li><span aria-hidden="true">✓</span> 5 voiceover minutes</li>
+              <li><span aria-hidden="true">✓</span> 3 avatar styles</li>
+              <li><span aria-hidden="true">✓</span> 3 languages</li>
+              <li class="pricing-card__feature--inactive"><span aria-hidden="true">✗</span> Priority generation</li>
+              <li class="pricing-card__feature--inactive"><span aria-hidden="true">✗</span> API access</li>
+            </ul>
+            <a href="#" class="btn btn--secondary btn--full">Get Started Free</a>
+          </div>
+
+          <!-- Pro (featured) -->
+          <div class="pricing-card pricing-card--featured" data-animate="fade-up" data-delay="0.1">
+            <div class="pricing-card__popular-badge">Most Popular</div>
+            <div class="pricing-card__tier">Pro</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount" data-monthly="29" data-annual="17">29</span>
+              <span class="pricing-card__period">/month</span>
+            </div>
+            <p class="pricing-card__desc">For creators and professionals who create daily.</p>
+            <ul class="pricing-card__features">
+              <li><span aria-hidden="true">✓</span> Unlimited words</li>
+              <li><span aria-hidden="true">✓</span> 120 voiceover minutes</li>
+              <li><span aria-hidden="true">✓</span> 30 avatar styles</li>
+              <li><span aria-hidden="true">✓</span> All 24 languages</li>
+              <li><span aria-hidden="true">✓</span> Priority generation</li>
+              <li class="pricing-card__feature--inactive"><span aria-hidden="true">✗</span> API access</li>
+            </ul>
+            <a href="#" class="btn btn--primary btn--full">Start Pro Trial</a>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="pricing-card" data-animate="fade-up" data-delay="0.2">
+            <div class="pricing-card__tier">Enterprise</div>
+            <div class="pricing-card__price">
+              <span class="pricing-card__currency">$</span>
+              <span class="pricing-card__amount" data-monthly="99" data-annual="59">99</span>
+              <span class="pricing-card__period">/month</span>
+            </div>
+            <p class="pricing-card__desc">For teams and businesses that need full power.</p>
+            <ul class="pricing-card__features">
+              <li><span aria-hidden="true">✓</span> Everything in Pro</li>
+              <li><span aria-hidden="true">✓</span> Unlimited voiceover</li>
+              <li><span aria-hidden="true">✓</span> Custom avatar training</li>
+              <li><span aria-hidden="true">✓</span> API access &amp; webhooks</li>
+              <li><span aria-hidden="true">✓</span> Team collaboration</li>
+              <li><span aria-hidden="true">✓</span> Dedicated support</li>
+            </ul>
+            <a href="#" class="btn btn--secondary btn--full">Contact Sales</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         TESTIMONIALS
+    ================================================================ -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-label">User Love</span>
+          <h2 class="section-heading" id="testimonials-heading">
+            Loved by creators<br>
+            <span class="text-gradient">around the world</span>
+          </h2>
+        </div>
+
+        <div class="testimonials__grid">
+
+          <blockquote class="testimonial-card" data-animate="fade-up" data-delay="0">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-card__quote">
+              "Gicnova completely transformed my content workflow. I produce
+              5× more content in half the time. The AI Writer is genuinely impressive."
+            </p>
+            <footer class="testimonial-card__footer">
+              <div class="testimonial-card__avatar testimonial-card__avatar--1" aria-hidden="true"></div>
+              <div>
+                <div class="testimonial-card__name">Sarah Chen</div>
+                <div class="testimonial-card__role">Content Director, TechFlow</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card" data-animate="fade-up" data-delay="0.1">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-card__quote">
+              "The voiceover quality is unreal. My podcast listeners thought I hired
+              a professional narrator. Gicnova pays for itself in the first week."
+            </p>
+            <footer class="testimonial-card__footer">
+              <div class="testimonial-card__avatar testimonial-card__avatar--2" aria-hidden="true"></div>
+              <div>
+                <div class="testimonial-card__name">Marcus Williams</div>
+                <div class="testimonial-card__role">Podcast Host &amp; Creator</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card" data-animate="fade-up" data-delay="0.2">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-card__quote">
+              "Our marketing team uses Gicnova every day for multilingual campaigns.
+              The avatar feature has become central to our brand identity globally."
+            </p>
+            <footer class="testimonial-card__footer">
+              <div class="testimonial-card__avatar testimonial-card__avatar--3" aria-hidden="true"></div>
+              <div>
+                <div class="testimonial-card__name">Priya Sharma</div>
+                <div class="testimonial-card__role">Head of Marketing, Nexus AI</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card" data-animate="fade-up" data-delay="0.3">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-card__quote">
+              "I was sceptical about AI content, but Gicnova changed my mind.
+              The output is creative, accurate, and always on-brand."
+            </p>
+            <footer class="testimonial-card__footer">
+              <div class="testimonial-card__avatar testimonial-card__avatar--4" aria-hidden="true"></div>
+              <div>
+                <div class="testimonial-card__name">James O'Brien</div>
+                <div class="testimonial-card__role">Freelance Copywriter</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card" data-animate="fade-up" data-delay="0.1">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-card__quote">
+              "We integrated the Gicnova API into our platform in under a day.
+              The documentation is excellent and the response times are blazing fast."
+            </p>
+            <footer class="testimonial-card__footer">
+              <div class="testimonial-card__avatar testimonial-card__avatar--5" aria-hidden="true"></div>
+              <div>
+                <div class="testimonial-card__name">Elena Vasquez</div>
+                <div class="testimonial-card__role">CTO, Orbit Labs</div>
+              </div>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial-card" data-animate="fade-up" data-delay="0.2">
+            <div class="testimonial-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <p class="testimonial-card__quote">
+              "The multilingual capability is a game-changer for our global
+              e-commerce. One brief, 24 localised versions, zero headache."
+            </p>
+            <footer class="testimonial-card__footer">
+              <div class="testimonial-card__avatar testimonial-card__avatar--6" aria-hidden="true"></div>
+              <div>
+                <div class="testimonial-card__name">Kai Tanaka</div>
+                <div class="testimonial-card__role">E-commerce Manager, Luminary</div>
+              </div>
+            </footer>
+          </blockquote>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         FAQ
+    ================================================================ -->
+    <section class="faq" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+
+        <div class="section-header" data-animate="fade-up">
+          <span class="section-label">Got Questions?</span>
+          <h2 class="section-heading" id="faq-heading">
+            Frequently asked<br>
+            <span class="text-gradient">questions</span>
+          </h2>
+        </div>
+
+        <div class="faq__list" data-animate="fade-up">
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-1">
+              <span>What AI models power Gicnova?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-item__body" id="faq-1" role="region" hidden>
+              <p>Gicnova uses a combination of state-of-the-art large language models for text generation, advanced neural text-to-speech systems for voiceover, and deep learning generative models for avatar creation. All models are fine-tuned specifically for creative and commercial content use cases.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-2">
+              <span>Is the content generated by Gicnova copyright-free?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-item__body" id="faq-2" role="region" hidden>
+              <p>Yes. All content generated through Gicnova is yours to use commercially. You retain full ownership and rights to everything created in your account. We do not claim any copyright over your generated content.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-3">
+              <span>Can I switch plans or cancel at any time?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-item__body" id="faq-3" role="region" hidden>
+              <p>Absolutely. You can upgrade, downgrade, or cancel your plan at any time from your account dashboard. If you cancel, you keep access to your plan features until the end of your billing period. No hidden fees or cancellation penalties.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-4">
+              <span>Does Gicnova support team accounts?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-item__body" id="faq-4" role="region" hidden>
+              <p>Yes. The Enterprise plan includes team collaboration features — multiple seats, shared workspaces, role-based permissions, and a centralised billing dashboard. Contact our sales team to set up a custom team plan for your organisation.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-5">
+              <span>Is there an API available for developers?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-item__body" id="faq-5" role="region" hidden>
+              <p>The Gicnova REST API is available on the Enterprise plan. It provides programmatic access to all three AI engines — Writer, Voiceover, and Avatar — with webhook support for asynchronous processing, SDKs for JavaScript/TypeScript and Python, and detailed API documentation.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__trigger" aria-expanded="false" aria-controls="faq-6">
+              <span>How is my data protected?</span>
+              <svg class="faq-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="faq-item__body" id="faq-6" role="region" hidden>
+              <p>We take data security seriously. All data is encrypted at rest and in transit. We are SOC 2 Type II compliant and GDPR-ready. Your content and prompts are not used to train our models. You can request data deletion at any time from your account settings.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         BLOG
+    ================================================================ -->
+    <section class="blog" id="blog" aria-labelledby="blog-heading">
+      <div class="container">
+
+        <div class="section-header section-header--spaced" data-animate="fade-up">
+          <div>
+            <span class="section-label">Latest Insights</span>
+            <h2 class="section-heading" id="blog-heading">
+              From the <span class="text-gradient">Gicnova blog</span>
+            </h2>
+          </div>
+          <a href="#" class="btn btn--secondary">View all articles</a>
+        </div>
+
+        <div class="blog__grid">
+
+          <article class="blog-card" data-animate="fade-up" data-delay="0">
+            <div class="blog-card__image blog-card__image--1" aria-hidden="true">
+              <div class="blog-card__category">AI Writing</div>
+            </div>
+            <div class="blog-card__body">
+              <time class="blog-card__date" datetime="2026-02-20">20 Feb 2026</time>
+              <h3 class="blog-card__title">
+                <a href="#">Designing for Everyone — Why Multilingual AI Apps Matter</a>
+              </h3>
+              <p class="blog-card__excerpt">
+                Explore how AI-driven multilingual tools are democratising content creation
+                and breaking down language barriers for global creators.
+              </p>
+              <a href="#" class="blog-card__link">
+                Read more
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="blog-card" data-animate="fade-up" data-delay="0.1">
+            <div class="blog-card__image blog-card__image--2" aria-hidden="true">
+              <div class="blog-card__category">Voice AI</div>
+            </div>
+            <div class="blog-card__body">
+              <time class="blog-card__date" datetime="2026-02-10">10 Feb 2026</time>
+              <h3 class="blog-card__title">
+                <a href="#">The Future of AI Voiceover in Video Production</a>
+              </h3>
+              <p class="blog-card__excerpt">
+                How AI-generated voices are reshaping the video production industry
+                and what it means for content creators and agencies.
+              </p>
+              <a href="#" class="blog-card__link">
+                Read more
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="blog-card" data-animate="fade-up" data-delay="0.2">
+            <div class="blog-card__image blog-card__image--3" aria-hidden="true">
+              <div class="blog-card__category">AI Avatars</div>
+            </div>
+            <div class="blog-card__body">
+              <time class="blog-card__date" datetime="2026-01-28">28 Jan 2026</time>
+              <h3 class="blog-card__title">
+                <a href="#">AI Avatars Are Changing Brand Identity — Here's How</a>
+              </h3>
+              <p class="blog-card__excerpt">
+                Virtual brand characters powered by AI are the next evolution in digital
+                marketing. We explore the trends reshaping brand personality.
+              </p>
+              <a href="#" class="blog-card__link">
+                Read more
+                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         FINAL CTA BANNER
+    ================================================================ -->
+    <section class="cta-banner" aria-labelledby="cta-heading">
+      <div class="cta-banner__bg" aria-hidden="true">
+        <div class="cta-banner__orb"></div>
+      </div>
+      <div class="container">
+        <div class="cta-banner__inner" data-animate="fade-up">
+          <span class="section-label section-label--light">Ready to start?</span>
+          <h2 class="cta-banner__heading" id="cta-heading">
+            Supercharge your creativity<br>
+            <span class="text-gradient">with Gicnova today</span>
+          </h2>
+          <p class="cta-banner__sub">
+            Join 6,650+ creators. No credit card required. Cancel anytime.
+          </p>
+          <div class="cta-banner__actions">
+            <a href="#" class="btn btn--store btn--lg" aria-label="Download on the App Store">
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <span>
+                <small>Download on the</small>
+                App Store
+              </span>
+            </a>
+            <a href="#" class="btn btn--store btn--lg" aria-label="Get it on Google Play">
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.37.2.8.22 1.2.04l12.35-6.9-2.65-2.65-10.9 9.51zm-1.01-19.8C2.06 4.2 2 4.53 2 4.88v14.24c0 .35.06.68.17.96l.09.09 7.98-7.98v-.19l-7.98-7.97-.09.03zm13.4 10.77l-2.66-2.67 2.66-2.66 3 1.68c.86.48.86 1.26 0 1.74l-3 1.91zm-12.24 7.38L16.02 15l-2.65-2.66L3.33 22.1l.01.01z"/></svg>
+              <span>
+                <small>Get it on</small>
+                Google Play
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       FOOTER
+  ================================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <a href="/" class="nav__logo" aria-label="Gicnova home">
+            <span class="nav__logo-icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="16" fill="url(#logo-gradient-ft)"/>
+                <path d="M10 16.5L14.5 21L22 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="logo-gradient-ft" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#a855f7"/>
+                    <stop offset="1" stop-color="#ec4899"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
+            <span class="nav__logo-text">Gicnova</span>
+          </a>
+          <p class="footer__tagline">
+            Next-gen AI tools for writers, creators, and innovators worldwide.
+          </p>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product links -->
+        <div class="footer__col">
+          <h3 class="footer__col-heading">Product</h3>
+          <ul class="footer__links">
+            <li><a href="#features">AI Writer</a></li>
+            <li><a href="#features">AI Voiceover</a></li>
+            <li><a href="#features">AI Avatar</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#">API Docs</a></li>
+          </ul>
+        </div>
+
+        <!-- Company links -->
+        <div class="footer__col">
+          <h3 class="footer__col-heading">Company</h3>
+          <ul class="footer__links">
+            <li><a href="#">About us</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press kit</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Support links -->
+        <div class="footer__col">
+          <h3 class="footer__col-heading">Support</h3>
+          <ul class="footer__links">
+            <li><a href="#">Help centre</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Status page</a></li>
+            <li><a href="#">Changelog</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal links -->
+        <div class="footer__col">
+          <h3 class="footer__col-heading">Legal</h3>
+          <ul class="footer__links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">GDPR</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 Gicnova. All rights reserved.</p>
+        <p>Built with ♥ for creators worldwide.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS -->
+  <script src="main.js"></script>
+
+</body>
+</html>
