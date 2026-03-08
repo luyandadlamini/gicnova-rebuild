@@ -1970,6 +1970,11 @@ button {
   opacity: 0;
 }
 
+/* Hero elements are animated with gsap.from() — need to start visible so GSAP can animate 0→1 */
+.hero [data-animate] {
+  opacity: 1;
+}
+
 /* ----------------------------------------------------------------
    22. RESPONSIVE — 1280px (Laptop)
    ---------------------------------------------------------------- */
